@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+    {% block stylesheet %}
+        {{ encore_entry_link_tags('bePartner') }}
+    {% endblock %}
+{% block body %}
+    <img class="partnerImg" src="/build/images/partenaire.jpg"/>
+    <h1 class="ui block header partnerTitle">Devenir Partenaire</h1>
+    <p>Vous souhaitez promouvoir votre destination ?
+    Vous en avez marre de perdre du terrain et de compromettre votre créativité et votre originalité ?
+    Vous souhaitez parler de votre incroyable pays et créer des itinéraires et des expériences de voyages authentiques pour les voyageurs ?
+    Merci de votre intérêt pour Click & Trip. Nous sommes toujours intéressés par les entreprises qui cherchent à établir un partenariat, en particulier celles qui partagent notre philosophie : «  Créer des voyages sur mesure authentiques et plus responsables ».
+    Veuillez compléter le formulaire ci-dessous avec vos coordonnées. Nous ne pouvons vous promettre de vous contacter immédiatement, mais nous conserverons vos coordonnées au moment où nous recherchons des partenaires pour votre destination.
+    <div class="ui form partnerForm">
+        {{ form_start(form) }}
+        {{ form_row(form.contactPeople) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.companyName) }}
+        {{ form_row(form.websiteUrl) }}
+        {{ form_row(form.aboutCompany) }}
+        {{ form_row(form.companyAdress) }}
+        {{ form_row(form.companyCountry) }}
+        {{ form_row(form.allCountry) }}
+        {{ form_row(form.companyDate) }}
+        {{ form_row(form.companyWorker) }}
+        {{ form_row(form.companyCustomer) }}
+        {{ form_row(form.companyInfo) }}
+        {{ form_row(form.companyBudget) }}
+        {{ form_row(form.companyDirectory) }}
+        {{ form_row(form.companyInsurance) }}
+        {{ form_row(form.companyMoreInfo) }}
+        <div class="partnerForm">
+            <button id="partnerButton" class="ui button" type="submit">Devenir partenaire</button>
+        </div>
+    </div>
+        {{ form_end(form) }}
+
+
+
+{% endblock %}

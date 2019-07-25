@@ -1,0 +1,116 @@
+<body style="text-align: center">
+
+<h1>
+Formulaire de contacte détaillez:
+</h1>
+
+<h3>
+    Nom du ou des voyageur(s): {{ data.name }}
+</h3>
+
+<h3>
+    Numéro de téléphone: {{ data.phoneNumber }}
+</h3>
+
+<h2>
+    Nombre de participants
+</h2>
+
+<h3>
+    Adultes:
+</h3>
+
+<p>
+    18-34 ans: {{ data.adulte1 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.adulte2 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.adulte3 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.adulte4 }}
+</p>
+
+<h3>
+    Enfants:
+</h3>
+
+<p>
+    18-34 ans: {{ data.enfants1 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.enfants2 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.enfants3 }}
+</p>
+
+<p>
+    18-34 ans: {{ data.enfants4 }}
+</p>
+
+<h3>
+    Commentaires: {{ data.comment }}
+</h3>
+
+<h2>
+    Date du voyage:
+</h2>
+
+{% if data.travelDate1 == 1 %}
+    <p>
+        Date de départ: {{ data.beginDate|date("d/m/Y") }}
+    </p>
+    <p>
+        Date de fin: {{ data.endDate|date("d/m/Y") }}
+    </p>
+{% endif %}
+
+{% if data.travelDate2 == 1 %}
+    <p>
+        Mois et années de départ: {{ data.mois }}, {{ data.annees }}
+    </p>
+{% endif %}
+
+{% if data.travelDate3 == 1 %}
+    <p>
+Aucune date.
+    </p>
+{% endif %}
+
+<h2>
+    Disponibilité pour un rdv téléphonique
+</h2>
+
+<h3>
+    Jours:
+</h3>
+
+<ul>
+    {% for days in data.disponibilityDays %}
+    <li>
+        {{ days }}
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>
+    Heures:
+</h3>
+
+<ul>
+    {% for hours in data.disponibilityHour %}
+        <li>
+            {{ hours }}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>

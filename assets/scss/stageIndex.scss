@@ -1,0 +1,32 @@
+tr:nth-child(even) {
+  background-color: #dfdfdf;
+}
+
+thead {
+  background-color: #b4b4b4;
+}
+
+.formContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.formContent {
+  width: 90%;
+}
+
+th {
+  width: 5%;
+}
+
+td {
+  padding: 5px 5px 5px 20px;
+}
+
+.createBtn {
+  margin: 20px 0 20px 0 !important;
+}

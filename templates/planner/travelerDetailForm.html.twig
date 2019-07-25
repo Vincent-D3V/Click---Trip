@@ -1,0 +1,119 @@
+{% extends "base.html.twig" %}
+    {% block stylesheet %}
+    {{ encore_entry_link_tags('travelerDetailForm') }}
+    {% endblock %}
+{% block body %}
+
+    <div id="padding-for-navbar">
+        <div class="formContainer">
+        <h1 class="ui block header travelerDetailsTitle">Commencez à créer votre projet voyage...</h1>
+        {{ form_start(form, {
+            'attr': {
+                'class' : 'ui form formulaire'
+            }
+        }) }}
+        {{ form_errors(form) }}
+        <h2>Qui voyage ?</h2>
+
+        <div class="field">
+            {{ form_row(form.name) }}
+        </div>
+
+        <h3>Combien de participants ?</h3>
+
+        <p>Merci de fournir le nombre de participant et l’âge des voyageurs qui aide notre expert local à personnaliser votre voyage.</p>
+
+        <h4>Adultes:</h4>
+
+        <div class="ui input focus">
+            {{ form_row(form.adulte1, {'value' : 0}) }}
+            {{ form_row(form.adulte2, {'value' : 0}) }}
+            {{ form_row(form.adulte3, {'value' : 0}) }}
+            {{ form_row(form.adulte4, {'value' : 0}) }}
+        </div>
+
+        <h4>Enfants</h4>
+
+        <div class="ui input focus">
+            {{ form_row(form.enfants1, {'value' : 0}) }}
+            {{ form_row(form.enfants2, {'value' : 0}) }}
+            {{ form_row(form.enfants3, {'value' : 0}) }}
+            {{ form_row(form.enfants4, {'value' : 0}) }}
+        </div>
+
+        <h2>Quand souhaitez-vous partir ? Merci de cocher la réponse</h2>
+        <div class="field">
+                {{ form_row(form.travelDate1) }}
+        </div>
+
+        {{ form_row(form.beginDate, {
+            'attr': {
+                'class': 'fields'
+            }
+        }) }}
+        {{ form_row(form.endDate, {
+            'attr': {
+                'class': 'fields'
+            }
+        }) }}
+
+        <div class="field">
+                {{ form_row(form.travelDate2) }}
+        </div>
+
+        <div class="fields">
+            <div class="field">
+                {{ form_row(form.mois) }}
+            </div>
+            <div class="field">
+                {{ form_row(form.annees) }}
+            </div>
+        </div>
+
+        <div class="field">
+                {{ form_row(form.travelDate3) }}
+        </div>
+
+        <h2>Quelles sont vos disponibilités pour un rendez-vous téléphonique?</h2>
+
+        <div class="field">
+                {{ form_row(form.disponibilityDays) }}
+            <br/>
+                {{ form_row(form.disponibilityHour) }}
+        </div>
+        
+        {{ form_row(form.phoneNumber) }}
+
+            <p id="details">
+                Vous avez presque terminé ! Veuillez nous en dire le plus possible sur vos projets et vos exigences particulières.
+                Plus il y a de détails, plus votre expert local pourra personnaliser votre voyage !
+                Merci de nous préciser tout lieu ou expérience que vous souhaitez absolument inclure dans votre itinéraire.
+                Pour commencer à planifier votre voyage, vous devez disposer d'un compte Click&Trip. Avecvotre adresse e-mail et un mot de passe,
+                vous pourrez planifier votre voyage depuis n'importe quel téléphone ou ordinateur.
+            </p>
+
+            <div class="field">
+                {{ form_widget(form.comment, { 'attr': {
+                    'rows' : '15',
+                    'cols' : '35' 
+                    }})
+                }}
+            </div>
+            <div class="field" style="display: inline-block">
+                {{ form_row(form.cgu) }}
+            </div>
+            <div style="display: inline-block">
+               <p>J'accepte <a target="_blank" href="{{ path("about_cgu") }}">les conditions générale d'utilisation</a></p>
+            </div>
+            <div id="detailsButton">
+                <button type="submit" class="ui secondary button">J'envoie ma demande</button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+    {# <script>
+        $('.ui.checkbox').checkbox();
+    </script> #}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block stylesheet %}
+    {{ encore_entry_link_tags('destination') }}
+{% endblock %}
+{% block body %}
+    <div id="padding-for-navbar">
+        <div class="ui three column grid destinationCard">
+        {% for step in steps %}
+        <div class="column">
+            <div class="ui fluid card">
+                <div class="image">
+                    <img src="{{ vich_uploader_asset(step.documents|first, 'imageFile' ) }}" alt="">
+                </div>
+                <div class="content">
+                    <a class="header">{{ step.nameStage }}</a>
+                    <a href="/etapes/{{ step.destination}}/{{ step.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('formRegistration') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container" id="padding-for-navbar">
+        <div class="formContainer">
+            <div id="form1">
+
+                {{ form_start(clientForm, {
+                    'attr': {
+                        'class' : 'ui form formulaire'
+                    }
+                }) }}
+
+                <h1>Inscription en tant que voyageur</h1>
+
+                <div class="field">
+                    {{ form_row(clientForm.name, {'label': 'Nom ', 'attr' :{'placeholder':"Entrez votre Nom de famille... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(clientForm.surname, {'label': 'Prénom', 'attr' :{'placeholder':"Entrez votre Prénom... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(clientForm.email, {'label': 'Email','attr' :{'placeholder':"Entrez votre email..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(clientForm.password, {'label': 'Mot de passe','attr' :{'placeholder':"mot de passe minimun 8 caractères..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(clientForm.dateOfBirth, {'label': 'date de naissance','attr' :{'placeholder':"Entrez votre date de naissance..." }}) }}
+                </div>
+
+                <div class="field">
+                    <button type="submit" class="ui secondary button">Inscription</button>
+                </div>
+
+                {{ form_end(clientForm) }}
+            </div>
+
+            <div class="formAgency" id="form2">
+
+                {{ form_start(agencyForm, {
+                    'attr': {
+                        'class' : 'ui form formulaire'
+                    }
+                }) }}
+
+                <h1>Inscription en tant qu'agence</h1>
+                
+                <div class="field">
+                    {{ form_row(agencyForm.nameAgent, {'label': 'Nom  ' ,'attr' :{'placeholder':"Nom de l'Agent..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.surnameAgent, {'label': 'Prénom ' ,'attr' :{'placeholder':"Prénom de l'agent..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.email, {'label': 'Email ', 'attr' :{'placeholder':"Entrez votre email... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.password, {'label': 'Mot de passe ', 'attr' :{'placeholder':"Entrez votre mot de passe... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.country, {'label': 'Pays ', 'attr' :{'placeholder':"Entrez votre pays... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.city, {'label': 'Ville ', 'attr' :{'placeholder':"Entrez votre  ville... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.address, {'label': 'Adresse ', 'attr' :{'placeholder':"Entrez votre adresse..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.image, {'label': 'Image ', 'attr' :{'placeholder':"Entrez votre image..." }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.company, {'label': "Nom de l'Agence ", 'attr' :{'placeholder':"Entrez le nom de l'agence... " }}) }}
+                </div>
+                <div class="field">
+                    {{ form_row(agencyForm.mobile, {'label': " N° de téléphone ", 'attr' :{'placeholder':"Entrez votre numéro de téléphone... " }}) }}
+                </div>
+
+                <div class="field">
+                    <button type="submit" class="ui secondary button">Inscription</button>
+                </div>
+                {{ form_end(agencyForm) }}
+
+            </div>
+            <button id="toggleForm" class="ui secondary inverted button signUpBtn">S'inscrire en tant qu'agence</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{{ encore_entry_script_tags('formRegistration') }}
+{% endblock %}
+

@@ -1,0 +1,6 @@
+.Mailbox {
+    display: grid;
+    grid-template-rows: calc(100vh - 65px);
+    grid-template-columns: 20vw 80vw;
+    grid-template-areas: "cv ms";
+}

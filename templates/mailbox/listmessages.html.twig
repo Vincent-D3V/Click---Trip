@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mailbox React{% endblock %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('mailbox') }}
+{% endblock %}
+{% block body %}
+    <div id="padding-for-navbar">
+        <div id="root" user-id={{ id }} user-type={{ type }}></div>
+    </div>
+    <style>
+        footer {display: none}
+    </style>
+{% endblock %}
+
+{% block javascript %}
+    {{ encore_entry_script_tags('mailbox') }}
+{% endblock %}

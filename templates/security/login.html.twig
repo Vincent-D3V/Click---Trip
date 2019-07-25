@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="formContainer">
+            <h1 id="padding-for-navbar" class="titre">Connexion</h1>
+            <form class="ui form formulaire" action="{{ path('compte_connexion') }}" method="post">
+                <div class="field">
+                    {% if error is not null %}
+                    <div class="ui red message">Adresse e-mail ou mot de passe incorrect.</div>
+                    {% endif %}
+                    <label>Adresse email</label>
+                    <input name="_username" placeholder="Adresse email ..." required name="_username" type="text">
+                </div>
+                <div class="field">
+                    <label>Mot de passe</label>
+                    <input name="_password" placeholder="Mot de passe ..." required name="_username" type="password">
+                </div>
+                <button type="submit" class="ui secondary button">Connexion</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

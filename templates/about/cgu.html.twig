@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block stylesheet %}
+    {{ encore_entry_link_tags('cgu') }}
+{% endblock %}
+{% block body %}
+<img class="cguImg" src="/build/images/cgu.jpg"/>
+    <h2 class="cguTitle ui block header">Cher voyageur, bonjour et bienvenue sur la plateforme CLICK & TRIP !</h2>
+    <h1 class="cguTitle">Nos Conditions Générales d'Utilisation</h1>
+    <p class="cguTitle">Merci de lire attentivement les présentes Conditions d’Utilisation de la plateforme
+    CLICK & TRIP afin d’être informé de vos droits, obligations et recours légaux.
+    Votre accès et votre utilisation de la Plateforme sont régis par les présentes Conditions
+    d’Utilisation qui constituent un Contrat entre CLICK & TRIP et vous.
+    En refusant ce contrat, CLICK & TRIP ne pourra vous donner de licence afin d’accéder
+    à sa Plateforme et aux services qui y sont proposés.
+    En acceptant les présentes Conditions vous certifiez vous conformer à celles-ci et à
+    toutes les lois, règles et règlement applicables à votre utilisation de la Plateforme ainsi
+    qu’aux services Locaux qui vous sont proposés ou que vous réservez.
+    Toute personne naviguant sur le Site est considérée comme un Utilisateur, qu'elle soit
+    identifiée ou non sur le Site.
+    Il est rappelé que CLICK & TRIP se réserve le droit de modifier les CGU à tout moment.
+    Il est ainsi conseillé à l'Utilisateur de consulter régulièrement la dernière version des
+        CGU et des mentions disponibles sur le Site.</p>
+    <div class="cguButton">
+        <a target="_blank" href="/build/images/CGU.pdf"><input id="cguButton" class="ui button" type="button" value="Voir la totalité des CGU"></a>
+    </div>
+{% endblock %}
+

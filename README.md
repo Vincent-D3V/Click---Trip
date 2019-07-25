@@ -127,3 +127,11 @@ SOFTWARE.
 
 ## Acknowledgments
 
+1. ```yarn install```
+2. ```yarn add @babel/preset-react --dev```
+3. ```composer require friendsofsymfony/jsrouting-bundle``` 
+4. ```bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json```
+5. ```yarn encore dev --watch```
+6. ```php bin/console d:d:c```
+7. ```php bin/console d:s:u```
+8. ```php bin/console d:f:l```

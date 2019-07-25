@@ -1,0 +1,19 @@
+.titre {
+  margin-top: 200px !important;
+}
+
+.formContainer {
+  height: 87vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulaire {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  width: 30vw;
+  padding: 50px;
+  margin: 50px 50px 300px 50px;
+}

@@ -1,0 +1,47 @@
+<nav class="nav container">
+      <img id='mobileLogo' src='https://i.ibb.co/cNqdNvt/logo-click-and-trip-blanc-petit.png' alt='logo click & Trip' a/>
+    <div id="mainListDiv" class="main_list">
+        <ul class="navlinks">
+            <li><a href="{{ path('homepage') }}">Accueil</a></li>
+            <li>
+                <div class="dropdown">
+                    <a href="#" id="dropdown" class="dropbtn">Mon compte</a>
+                    <div id="myDropdown" class="dropdown-content">
+                    {% if app.user %}
+                        {% if instanceofClient(app.user) %}
+                        <a href="{{ path('profil_edit_client') }}">Mon Profil</a>
+                        {% elseif instanceofAgency(app.user) %}
+                        <a href="{{ path('profil_edit_agency') }}">Mon Profil</a>
+                        <a href="{{ path('stage_index') }}">Mes Etapes</a>
+                        {% else %}
+                        <a href="{{ path('easyadmin') }}">Gestion admin</a>
+                        {% endif %}
+                        <a href="{{ path('profil_history') }}">Mes Voyages</a>
+                        <a href="{{ path('profil_mailbox') }}">Messagerie</a>
+                        <a href="{{ path('compte_deconnexion') }}">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('compte_inscription') }}">Inscription</a>
+                        <a href="{{ path('compte_connexion') }}">Connexion</a>
+                    {% endif %}
+                    </div>
+                </div>
+            </li>
+            <li><a href="{{ path('about_inspiration') }}">Inspirations</a></li>
+            <li  id='laptopLogo'><a href="{{ path('homepage') }}"> <img id="logo" src='https://i.ibb.co/cNqdNvt/logo-click-and-trip-blanc-petit.png' alt='logo click & Trip'/></a></li>
+            <li><a href="{{ path('planner') }}">Créer Mon Voyage</a></li>
+            <li>
+                <div class="dropdown">
+                    <a href="#" id="dropdown2" class="dropbtn">Destinations</a>
+                    <div id="myDropdown2" class="dropdown-content">
+                    </div>
+                </div>
+            </li>
+            <li><a href="{{ path('about_contact') }}">Contact</a></li>
+        </ul>
+    </div>
+    <span class="navTrigger">
+      <i></i>
+      <i></i>
+      <i></i>
+  </span>
+</nav>

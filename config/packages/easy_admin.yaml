@@ -1,0 +1,99 @@
+easy_admin:
+    list:
+        actions:
+            - {name: "edit" , label: '+Détails'}
+    disabled_actions: ['new', 'delete', 'show']
+    entities:
+        # List the entity class name you want to manage
+        Agency:
+            class: App\Entity\Agency
+            label: 'Agences'
+            list:
+                title: 'Agences'
+                fields:
+                    - 'id'
+                    - 'email'
+                    - { property: 'country', label: 'Pays' }
+                    - { property: 'city', label: 'Ville' }
+                    - { property: 'company', label: 'Agence' }
+                    - { property: 'validate', label: 'Validé ?' }
+            edit:
+                title: "Détails d'une agence"
+                fields: 
+                    - 'email'
+                    - 'country'
+                    - 'city'
+                    - {property: 'address', label: 'Adresse de domicile'}
+                    - {property: 'mobile', label: 'N° tel.'}
+                    - 'company'
+                    - {property: 'nameAgent', label: "Prénom de l'agent"}
+                    - {property: 'surnameAgent', label: "Nom de l'agent"}
+                    - {property: 'yearCreation', label: "Année de création"}
+                    - 'description'
+                    - {property: 'presentation', label: 'Présentation'}
+                    - {property: 'flagship', label: "Coup de coeur"}
+                    - {property: 'stages', label: "N° des étapes"}
+           
+        Client:
+            class: App\Entity\Client
+            label: 'Clients'
+            list:
+                title: 'Clients'
+                fields:
+                    - 'id'
+                    - {property: 'name', label: 'Prénom'}
+                    - {property: 'surname', label: 'Nom'}
+                    - 'email'
+                    - { property: 'deleted', label: 'Compte supprimé ?' }
+            edit:
+                title: "Détails d'un client"
+                fields: 
+                    - 'email'
+                    - {property: 'mobile', label: 'N° tel.'}
+                    - {property: 'name', label: 'Prénom'}
+                    - {property: 'surname', label: 'Nom'}
+                    - {property: 'dateOfBirth', label: Date de naissance'}
+                    - {property: 'address', label: 'Adresse de domicile'}
+                    - {property: 'deleted', label: ": compte supprimé ?"}
+                    - {property: 'histories', label: "N° de voyage(s)"}
+        Stage:
+            class: App\Entity\Stage
+            label: 'Etapes'
+            list:
+                title: 'Etapes'
+                # actions: ['-edit']
+                fields: 
+                    - 'id'
+                    - 'destination'
+                    - 'reference'
+                    - { property: 'nameStage', label: 'Nom' }
+                    - { property: 'nameStage', label: 'Nom' }
+                    - { property: 'duration', label: 'Nbre jours' }
+                    - { property: 'validate', label: 'Validé' }
+                    - { property: 'deleted', label: 'Supprimé' }
+        History:
+            class: App\Entity\History
+            label: 'Voyages'
+            list:
+                title: 'Voyages'
+
+    site_name: '<b style="color:black">Gestionnaire Administrateur </b><i>Click And Trip</i>'
+    formats:
+        datetime: 'd/m/Y'
+        date: 'd/m/Y'
+    user:
+        display_name: false
+        display_avatar: false
+    design:
+        brand_color: red
+        assets:
+            # all kinds of assets are supported and linked accordingly
+            css:
+                - '/bundles/user/css/admin4.css'
+                - 'bundles/app/css/admin5.css'
+                - '../build/'
+            js:
+                - '/bundles/user/js/admin4.js'
+                - 'bundles/app/js/admin5.js'
+                - '../build/'
+            favicon: '../build/images/small-logo.png'

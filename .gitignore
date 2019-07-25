@@ -6,6 +6,9 @@
 /public/bundles/
 /var/
 /vendor/
+/public/js/
+/public/upload/*
+/public/uploads/*
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -32,3 +35,8 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+###> semantic json create w/ npm or yarn install ###
+/semantic/
+semantic.json
+

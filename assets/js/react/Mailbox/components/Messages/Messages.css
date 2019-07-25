@@ -1,0 +1,73 @@
+.Conversations {
+    grid-area: cv;
+    background-color: #f6f6f6;
+    overflow-y: scroll;
+    border-right: solid;
+}
+
+.Messages {
+    grid-area: ms;
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.list-messages {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    overflow: auto;
+    padding: 1% 2%;
+  }
+  
+.write-send {
+    height: 10%;
+    position: fixed;
+    bottom:-2%;
+    width: 100%;
+    background-color: black;
+    padding-top: 1%;
+}
+
+.ui.form .fields > .field:first-child { width: 70%}
+
+.ui.form {padding-left: 1%}
+
+.ui.message {
+    width: 80%;
+}
+
+.ui.message.right {
+    background-color: aquamarine;
+    align-self: flex-end;
+    text-align: right;
+    padding-bottom: 32px !important;
+}
+.ui.message.left {
+    background-color: azure;
+    align-self: flex-start;
+    padding-bottom: 32px !important;
+}
+
+.ui.selection.list > .item.selected {background-color: burlywood}
+
+#popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    background-color: whitesmoke;
+}
+
+#popup .flex-display {
+    color:black;
+    text-align: center;
+}
+
+#well-sent {display: none}

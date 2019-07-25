@@ -1,0 +1,37 @@
+
+{% extends "base.html.twig" %}
+
+    {% block stylesheet %}
+       {{ encore_entry_link_tags('contactForm') }}
+    {% endblock %}
+
+{% block body %}
+    <div id="padding-for-navbar"></div>
+    <div>
+        <div class="formContainer">
+            <h1 class="titre">Contact</h1>
+            {{ form_start(contactForm, {
+                    'attr': {
+                        'class' : 'ui form formulaire'
+                    }
+            }) }}
+            {{ form_errors(contactForm) }}
+
+            <div class="field">
+                {{ form_row(contactForm.name) }}
+            </div>
+            <div class="field">
+                {{ form_row(contactForm.email) }}
+            </div>
+            <div class="field">
+                {{ form_row(contactForm.message) }}
+            </div>
+
+            <div class="field">
+                <button type="submit" class="ui secondary button">Envoyer</button>
+            </div>
+
+            {{ form_end(contactForm) }}
+        </div>
+    </div>
+{% endblock %}

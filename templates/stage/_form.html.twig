@@ -1,0 +1,9 @@
+{{ form_start(form,{
+    'attr': {
+        'class' : 'ui form formulaire'
+    }
+})}}
+    <ul class="prices" data-prototype="{{ form_widget(form.prices.vars.prototype)|e('html_attr') }}"></ul>
+    <ul class="documents" data-prototype="{{ form_widget(form.documents.vars.prototype)|e('html_attr') }}"></ul>
+    <button class="ui button teal" style="margin-bottom: 20px">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

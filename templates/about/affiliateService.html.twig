@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('affiliateService') }}
+{% endblock %}
+
+{% block body %}
+    <div id="padding-for-navbar">
+    <h1 class="serviceTitle2">Services Associé</h1>
+
+    <h2 class="serviceTitle ui block header">Louez une voiture:</h2>
+    <object class="iframe" data="https://www.bsp-auto.com/ag_clickandtrip/" width="500" height="600">
+    </object>
+    <div class="affiliateButton">
+        <button  class="ui button affiliateButtonColor">
+            <h3><a class="buttonTextColor" target="_blank" href="https://www.bsp-auto.com/ag_clickandtrip/">Lien vers le site</a></h3>
+        </button>
+    </div>
+
+    <h2 class="serviceTitle ui block header">Assurance Voyage:</h2>
+    <object class="iframe" data="https://www.chapkadirect.fr/?app=cd_clicktrip" width="500" height="600">
+    </object>
+    <div class="affiliateButton">
+        <button class="ui button affiliateButtonColor">
+            <h3><a class="buttonTextColor" target="_blank" href="https://www.chapkadirect.fr/?app=cd_clicktrip">Lien vers le site</a></h3>
+        </button>
+    </div>
+    <h2 class="serviceTitle ui block header">Retard et annulation:</h2>
+    <object class="iframe" data="https://www.flightright.fr/calculateur-d-indemnisation/?ext_promoCode=ct&utm_source=ct&utm_medium=widget&utm_campaign=link" width="500" height="600">
+    </object>
+    <div class="affiliateButton">
+        <button class="ui button affiliateButtonColor">
+            <h3><a class="buttonTextColor" target="_blank" href="https://www.flightright.fr/calculateur-d-indemnisation/?ext_promoCode=ct&utm_source=ct&utm_medium=widget&utm_campaign=link">Lien vers le site</a></h3>
+        </button>
+    </div>
+    <h2 class="serviceTitle ui block header">Conseils:</h2>
+    <div class="affiliateButton">
+        <button class="ui button affiliateButtonColor">
+            <h3><a class="buttonTextColor" target="_blank" href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/">Lien vers le site</a></h3>
+        </button>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('editAgencyForm') }}
+{% endblock %}
+
+{% block body %}
+<div class="container" id="padding-for-navbar">
+    <div class="formContainer">
+        <h1 class="titre">Modification du profil</h1>
+        {{ form_start(form, {
+                        'attr': {
+                            'class' : 'ui form formulaire'
+                        }
+                    }) }}
+
+        <div class="field">
+            {{ form_row(form.nameAgent, {'label': 'Nom ', 'attr' :{'placeholder':"Entrez votre Nom de famille... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.surnameAgent, {'label': 'Prénom', 'attr' :{'placeholder':"Entrez votre Prénom... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.email, {'label': 'Email','attr' :{'placeholder':"Entrez votre email..." }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.address, {'label': 'adresse', 'attr' :{'placeholder':"Entrez votre adresse... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.country, {'label': 'Pays ', 'attr' :{'placeholder':"Entrez votre pays... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.city, {'label': 'Ville ', 'attr' :{'placeholder':"Entrez votre  ville... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.company, {'label': "Nom de l'Agence ", 'attr' :{'placeholder':"Entrez le nom de l'agence... " }}) }}
+        </div>
+        <div class="field">
+            {{ form_row(form.imageFile, {'label': "Image ", 'attr' :{'placeholder':"Charger votre image... " }}) }}
+        </div>
+
+        <button type="submit" class="ui secondary button">Enregistrer les modifications</button>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

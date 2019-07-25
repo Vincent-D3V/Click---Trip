@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demande de voyage envoyé{% endblock %}
+{% block stylesheet %}
+    {{ encore_entry_link_tags('success') }}
+{% endblock %}
+{% block body %}
+    <div id="padding-for-navbar"></div>
+    <div id="success">
+        <div class="ui attached segment">
+            <h2>Votre demande de voyage a bien été envoyée.</h2><h2>L'équipe Click And Trip vous recontactera via la messagerie interne pour vous tenir informer.</h2>
+        </div>
+        <div class="ui four bottom attached steps">
+            <div class="active completed step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">Choix des étapes-voyage</div>
+                </div>
+            </div>
+            <div class="step">
+                <i class="info circle icon"></i>
+                <div class="content">
+                    <div class="title">Messages</div>
+                    <div class="description">avec les locaux</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="payment icon"></i>
+                <div class="content">
+                    <div class="title">Paiement</div>
+                    <div class="description">(d'abord accompte de 70%)</div>
+                </div>
+            </div>
+            <div class="disabled step">
+                <i class="plane icon"></i>
+                <div class="content">
+                    <div class="title">Voyagez !</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

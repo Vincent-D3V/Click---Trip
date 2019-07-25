@@ -2,6 +2,7 @@ language: php
 php:
     - '7.2'
 before_install:
+    - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - if [ -d "./.idea" ]; then echo "Forbidden idea folder found ! Please, ignore them globaly..."; exit 2; fi
     - if [ -d "./.env.local" ]; then echo "Forbidden configuration file found !"; exit 2; fi
     - if [ -d "./vendor" ]; then echo "Forbidden external libs folder found !"; exit 2; fi

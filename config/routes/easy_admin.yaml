@@ -1,0 +1,6 @@
+easy_admin_bundle:
+    resource: '@EasyAdminBundle/Controller/EasyAdminController.php'
+    # keep that prefix; it'll be easier for acces security page // config/packages/security.yaml
+    prefix: /admin
+    type: annotation
+

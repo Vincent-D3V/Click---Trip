@@ -1,0 +1,157 @@
+@import "vars";
+
+body {
+  margin: 0
+}
+
+#host-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+iframe {
+  width: 100vw;
+  height: 58vw;
+  pointer-events: auto;
+  margin-top: -7%;
+}
+
+#slogan {
+  position: absolute;
+  color: white;
+  display: block;
+  width: 54%;
+  text-align: center;
+
+  & h2 {
+    font-size: 2.6vw;
+  }
+}
+
+#button-inspiration {
+  background-color: $white;
+
+  & a {
+    color: black
+  }
+}
+
+#button-voyage,
+#button-commitment {
+  background-color: #ff8080;
+
+  & a {
+    color: white
+  }
+}
+
+#explanation {
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & #text-explain {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & #icon-explain {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+
+    & span {
+      width: 16%;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  & button {
+    margin-top: 4%
+  }
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+#galerie {
+  width: 70vw;
+  margin: 0 15vw
+}
+
+#commitment {
+  margin-top: 3%;
+  position: relative;
+  width: 100vw;
+  height: 25vw;
+  overflow: hidden;
+
+  & img {
+    position: absolute;
+    width: inherit;
+    top: -80%;
+  }
+
+  & button {
+    z-index: 10;
+    position: absolute;
+    top: calc(50% - 23px);
+    left: calc(50% - 98px);
+  }
+}
+
+.ui.cards>.card>.image {
+  background-color: white
+}
+
+.ui.cards>.card .no-shadow {
+  -webkit-box-shadow: 0 0 0 0 white, 0 0 0 0 white;
+  box-shadow: 0 0 0 0 white, 0 0 0 0 white;
+}
+
+#testimonials {
+    margin: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #avis {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+#press {
+    margin: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #logos {
+        margin-top: 20px;
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

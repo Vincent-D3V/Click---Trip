@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block stylesheet %}
+    {{ encore_entry_link_tags('commitment') }}
+{% endblock %}
+{% block body %}
+
+<img class="commitmentImg" src="/build/images/engagements.jpg"/>
+    <div class="ctnr">
+        <div class="blockContainer">
+            <h1 class="ui block header commitmentTitle">Nos engagements</h1>
+    <p>Notre style à nous ce n’est pas le costume cravate mais bien de vous faire vivre des expériences de voyages locaux au plus proche de nos convictions.
+    En tant qu’équipe de passionnés de voyage, nous sommes tout à fait conscients de l’impact que les voyages et le tourisme peuvent avoir sur une destination. Bien entendu, les retombées économiques du tourisme peuvent être très importantes pour un pays, mais cela ne devrait jamais se faire au détriment de sa culture, de son environnement ou du bien-être de ses habitants. Les visites et expériences locales ont donc pour objectif d’avoir un impact positif sur les lieux que vous visitez en mettant en avant des voyages authentiques et plus responsables en Asie, en Afrique, et bien plus encore. En tant que visiteurs d'un autre pays, nous ne devrions jamais chercher à imposer notre propre culture, nos traditions ou nos croyances aux autres, mais plutôt à apprécier ceux des habitants et à expérimenter un mode de vie différent.
+    Sur l’ensemble des destinations, où nous avons des experts locaux, nous collaborons avec  les habitants et les entreprises locales pour mieux répartir les bénéfices et les retombées positives du tourisme. Nous sommes convaincus que cela vous offre la meilleure expérience, mais aussi que cela permet de promouvoir une croissance inclusive dans les communautés locales.  Grâce à cette démarche les locaux sont motivés pour préserver ce qui attire les visiteurs, que ce soit la culture, la faune ou l'environnement. Inversement, nous évitons activement les «pièges à touristes».
+    UNE DÉMARCHE RESPONSABLE
+    Click & Trip s’engage à faire en sorte que votre voyage ait un effet positif sur la destination que vous visitez.
+        Dans la mesure du possible, nous nous sommes engagés à travailler avec des entreprises locales :</p>
+       <div class="commitmentList">
+           <ul>
+               <h4><li>Qui favorisent des hébergements de propriétés locales et respectueux de l'environnement et de la société.</li></h4>
+               <h4><li>Qui embauchent des guides et des chauffeurs locaux.</li></h4>
+               <h4><li>Qui proposent des salaires et des conditions équitables pour tout le personnel impliqué dans votre voyage.</li></h4>
+               <h4><li>Qui s’engagent dans la protection des animaux sauvages et domestiques.</li></h4>
+               <h4><li>Qui protègent l’environnement grâce à de bonnes pratiques.</li></h4>
+               <h4><li>Qui accompagnent et favorisent les initiatives menées par la communauté, des boutiques d'artisanat, des restaurants.</li></h4>
+           </ul>
+       </div>
+
+    <div class="commitmentButton">
+        <img class="logoATR" src="/build/images/logoATR.png"/>
+    </div>
+            <div class="commitmentButton">
+                <a target="_blank" href="/build/images/charteATR.pdf"><input id="commitmentButton" class="ui button" value="Voir la charte" type="button"></a>
+            </div>
+    </div>
+    </div>
+{% endblock %}

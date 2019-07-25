@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div id="min-width" style="min-height:100vh">
+{% if histories is not empty %}
+    <h1 class="ui block header" id="padding-for-navbar">Historique de mes voyages:</h1>
+        {% for history in histories %}
+        <div class="ui cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">Date de départ: {{ history.dateBegin|date('Y-m-d') }}</div>
+                    <div class="meta">Date de fin: {{ history.dateEnd|date('Y-m-d') }}</div>
+                    <div class="meta">Prix: </div>
+                    <div class="description">
+                        STATUS: {{ history.state }}
+                    </div>
+                    {% if agencyBool %}
+                        {% if history.state == "Accepté par admin" %}
+                            <a href="{{ path('profil_confirmationAgence', {'id': history.id }) }}">Accepter le voyage</a>
+                        {% endif %}
+                    {% else %}
+                        {% if history.state == "Payé" %}
+                        <a href="{{ path('invoice', {'id': history.id }) }}" target="_blank">Nouvelle facture</a>
+                        {% elseif history.state == "Attente paiement" %}
+                            <a href="{{ path('profil_paiement', {'id': history.id }) }}">Payé</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+{% else %}
+    <h1 class="ui block header" id="padding-for-navbar">Vous n'avez pas encore formulé une demande de voyage.</h1>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formulaire {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  width: 50vw;
+  padding: 50px;
+  margin: 50px 50px 300px 50px;
+}
+
+#details {
+  text-align: justify;
+}
+
+.travelerDetailsTitle{
+  padding-top: 40px!important;
+}

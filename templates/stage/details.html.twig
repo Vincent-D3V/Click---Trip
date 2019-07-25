@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+ {% block stylesheet %}
+     {{ encore_entry_link_tags('stageDetails') }}
+     <style type="text/css">
+         /*GALERIE PHOTO JS*/
+
+         .Galerie{
+             padding:0;
+             background:#fff;
+             font-size: 500px;
+         }
+         .main-img img, .imgs img {
+             width: 100%;
+         }
+         .imgs{
+             display: grid;
+             grid-template-columns: repeat(4, 1fr);
+             margin-top: 5px;
+             grid-gap: 5px;
+         }
+     </style>
+{% endblock %}
+{% block body %}
+<div class="product">
+    <div id="productImages">
+            <!--row mosaïque-photos-->
+            <section>
+                <div class="Galerie">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-10 offset-1">
+                                <div class="main-img">
+                                    <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" id="current" alt="mosaique">
+                                </div>
+                                <div class="imgs" id="container-images">
+                                    {% for photo in stage.documents %}
+                                        <img class="imgDetail" src="{{ vich_uploader_asset(photo, 'imageFile' ) }}" alt="mosaique" />
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    <div class="productInfo">
+        <h1 class="title ui block header">{{ stage.nameStage }}</h1>
+        <div class="subProdInfo">
+            <span class="price">Durée:{{ stage.duration }}Jours</span>
+            <span class="stock">{% for price in stage.prices %}à partir de {{ price }} €{% endfor %}</span>
+
+        </div>
+
+        <p>{{ stage.details }}</p>
+    </div>
+</div>
+{% endblock %}
+{% block javascript %}
+    {{ encore_entry_script_tags('galery') }}
+{% endblock %}

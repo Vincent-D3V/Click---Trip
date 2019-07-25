@@ -1,0 +1,6 @@
+{% extends "base.html.twig" %}
+{% block body %}
+{% for history in histories %}
+    <a href="{{ path('profil_paiementAccepter', {'id': history.id }) }}">Payé</a>
+    {% endfor %}
+{% endblock %}

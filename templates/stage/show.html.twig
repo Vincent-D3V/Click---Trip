@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage{% endblock %}
+{% block stylesheet %}
+{{ encore_entry_link_tags('stageShow') }}
+{% endblock %}
+
+{% block body %}
+
+<div class="formContainer">
+<div class="formContent">
+    <h1 id="padding-for-navbar">Etape</h1>
+
+    <table class="ui celled table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stage.id }}</td>
+            </tr>
+            <tr>
+                <th>Validé</th>
+                <td>{{ stage.validate ? 'Oui' : 'Non' }}</td>
+            </tr>
+            <tr>
+                <th>Destination</th>
+                <td>{{ stage.destination }}</td>
+            </tr>
+            <tr>
+                <th>Référence</th>
+                <td>{{ stage.reference }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ stage.nameStage }}</td>
+            </tr>
+            <tr>
+                <th>Durée</th>
+                <td>{{ stage.duration }}</td>
+            </tr>
+            <tr>
+                <table class="prices">
+                    <thead>
+                        <tr>Prix</tr>
+                        {# <tr>2 pers</tr>
+                        <tr>4 pers</tr>
+                        <tr>6 pers</tr>
+                        <tr>8 pers</tr>
+                        <tr>10 pers</tr> #}
+                        <tr>check twig</tr>
+                    </thead>
+                    <tbody>
+                        {% for price in stage.prices %}
+                        {# <tr>Du {{ price.dateBegin }} au {{ price.dateEnd }}</tr> #}
+                        <tr>{{ price.dateBegin }} {{ price.dateEnd }}</tr>
+                            {# {% if price.persons == 2 %} #}
+                                <tr>{{ price.price }}</tr>
+                            {# {% endif %} #}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </tr>
+            <tr>
+                <th>Supprimé ?</th>
+                <td>{{ stage.deleted ? 'Oui' : 'Non' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('stage_index') }}" class="ui label teal">Retourner a la liste</a>
+
+    <a href="{{ path('stage_edit', {'id': stage.id}) }}" class="ui label orange">Editer</a>
+
+
+    {{ include('stage/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

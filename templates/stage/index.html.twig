@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage index{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{ encore_entry_link_tags('stageIndex') }}
+{% endblock %}
+
+{% block body %}
+<div class="formContainer">
+    <div class="formContent">
+    <h1 id="padding-for-navbar">Liste de vos étapes</h1>
+
+    <a href="{{ path('stage_new') }}" class="ui button createBtn green">Ajouter une étape</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id
+                    <a href="{{ path('stage_index', {'sortField': 'id', 'sortDirection': 'ASC'}) }}">
+                        <i class="fa fa-sort"></i>
+                    </a>
+                </th>
+                <th>Validé</th>
+                <th>Destination</th>
+                <th>Référence
+                    <a href="{{ path('stage_index', {'sortField': 'reference', 'sortDirection': 'ASC'}) }}">
+                        <i class="fa fa-sort"></i>
+                    </a>
+                </th>
+                <th>Description
+                    <a href="{{ path('stage_index', {'sortField': 'nameStage', 'sortDirection': 'ASC'}) }}">
+                        <i class="fa fa-sort"></i>
+                    </a>
+                </th>
+                <th>Durée
+                    <a href="{{ path('stage_index', {'sortField': 'duration', 'sortDirection': 'ASC'}) }}">
+                        <i class="fa fa-sort"></i>
+                    </a>
+                </th>
+                <th>Supprimé</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stage in stages %}
+            <tr>
+                <td>{{ stage.id }}</td>
+                <td>{{ stage.validate ? 'Oui' : 'Non' }}</td>
+                <td>{{ stage.destination }}</td>
+                <td>{{ stage.reference }}</td>
+                <td>{{ stage.nameStage }}</td>
+                <td>{{ stage.duration }}</td>
+                <td>{{ stage.deleted ? 'Oui' : 'Non' }}</td>
+                <td>
+                    <a href="{{ path('stage_show', {'id': stage.id}) }}" class="ui label teal">Voir</a>
+                    <a href="{{ path('stage_edit', {'id': stage.id}) }}" class="ui label orange">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascript %}
+<script src="https://kit.fontawesome.com/f62deca48c.js"></script>
+{% endblock %}

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    {{ encore_entry_link_tags('index') }}
+    {% block stylesheet %}{% endblock %}
+    <link rel="icon" href="{{ asset("build/images/small-logo.png")}}" style="color:#000000">
+</head>
+<body>
+    <header>
+        {% include "_navbar.html.twig" %}
+    </header>
+
+    <div class="container">
         {% block body %}{% endblock %}
-        {% block javascripts %}
-            +     {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+    </div>
+    <footer>
+        {% include '_footer.html.twig'  %}
+    </footer>
+    {{ encore_entry_script_tags('index') }}
+    {% block javascript %}{% endblock %}
+</body>
+
 </html>

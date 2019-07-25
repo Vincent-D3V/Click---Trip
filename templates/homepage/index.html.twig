@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Click & trip{% endblock %}
+{% block stylesheet %}
+        {{ encore_entry_link_tags('homepage') }}
+{% endblock %}
+{% block body %}
+<div id="host-video">
+    <iframe src="https://www.youtube.com/embed/NK7ffg8Q9DA?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=NK7ffg8Q9DA&autohide=2&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1" allow="accelerometer; autoplay; encrypted-media; autoloop; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {# autostart works on chrome but not on firefox #}
+    <div id="slogan">
+        <h2>Créez votre voyage authentique & plus responsable</h2>
+        <div class="large ui buttons" id="choice-buttons">
+            <button class="ui button" id="button-voyage"><a href="{{ path('planner') }}">Où souhaitez-vous partir ?</a></button>
+            <button class="ui button" id="button-inspiration"><a href="{{ path('about_inspiration') }}">Inspirations</a></button>
+        </div>
+    </div>
+</div>
+<div id="explanation">
+  <div id="text-explain">
+    <h2>Comment utiliser Click & Trip ?</h2>
+    <h5>Des vacances sur mesure conçues par des experts locaux de confiance du monde entier</h5>
+    <h4>MISE EN PLACE D’UNE BANNIERE EXPLICATIVE</h4>
+      <div class="ui three bottom attached steps">
+          <div class="step">
+              <div class="content">
+                  <div class="description"> <strong> 1. </strong>J'explore les étapes voyages à travers un éventail de titre</div>
+              </div>
+          </div>
+          <div class="step">
+              <div class="content">
+                  <div class="description"> <strong> 2. </strong>Révelez le voyageur qui est en vous en sélectionant les étapes voyages</div>
+              </div>
+          </div>
+          <div class="step">
+              <div class="content">
+                  <div class="description"> <strong> 3. </strong>Je valide ma demande et je finalise avec l'expert local la destination.Payement sécurisé</div>
+              </div>
+          </div>
+      </div>
+    <h2>Pourquoi voyager avec Click & Trip ?</h2>
+    <h4>Nos experts locaux sont basés dans votre destination et sont donc les mieux placés pour organiser votre voyage</h4>
+  </div>
+  <div id="icon-explain">
+    <span><p> <strong>Respecter le pays que je visite</strong></p><img src="{{ asset("build/images/1-world.svg") }}" alt="#"></span>
+    <span><img src="{{ asset("build/images/2-teamwork.svg") }}" alt="#"><p> <strong>Encourager les échanges et les rencontres avec les locaux</strong></p></span>
+    <span><img src="{{ asset("build/images/3-tv-screen.svg") }}" alt="#"><p><strong>Prix juste</strong></p></span>
+    <span><img src="{{ asset("build/images/4-place.svg") }}" alt="#"><p> <strong>Favoriser l'économie locale</strong></p></span>
+  </div>
+  <button class="ui button big" id="button-voyage"><a href="{{ path('planner') }}">Créer mon itinéraire sur mesure</a></button>
+</div>
+<h2 class="block">Inspirations - Explorer de nouvelles étapes</h2>
+<div class="block" id="galerie">
+    <div class="ui special cards centered">
+      {% for stage in inspirations %}
+        <div class="card">
+          <div class="blurring dimmable image">
+            <div class="ui dimmer">
+              <div class="content">
+                <div class="center">
+                  <div class="ui inverted button">Add Friend</div>
+                </div>
+              </div>
+            </div>
+            <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}">
+          </div>
+          <div class="content">
+            <a class="header">{{ stage.destination }}</a>
+            <div class="meta">
+              <span class="date">{{ stage.nameStage }}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+</div>
+<div id="commitment">
+  <img src="{{ asset("build/images/nos-engagements.jpg") }}" alt="engagements entreprise click and trip">
+  <button class="ui button big" id="button-commitment"><a href="{{ path('about_nos-engagements') }}">Nos Engagements</a></button>
+</div>
+
+<div id="testimonials">
+  <h2>Témoignage des voyageurs</h2>
+  <p>Vous pouvez réserver votre voyage avec Cick &amp; Trip en toute confiance</p>
+  <div id="avis">
+    <div>placeholder</div>
+    <div>placeholder</div>
+    <div>placeholder</div>
+  </div>
+</div>
+
+<div id="press">
+  <h2>Ils parlent de nous...</h2>
+  <div id="logos">
+    <img src="https://www.maddyness.com/wp-content/uploads/2018/03/IMF_AMBGRAND_5885_1503927364_Maddyness_Logo.png" width="200px"/>
+    <img src="https://upload.wikimedia.org/wikipedia/fr/0/0a/Courrier_de_l_ouest_logo_2017.jpg" width="200px"/>
+    <img src="http://www.engagementnazairien.fr/wp-content/uploads/2017/10/actu-presse-logo-presse-ocean-718x464.png" width="200px"/>
+    <img src="https://www.edilivre.com/media/blog/2014/12/logo_LADEPECHE.fr_.png" width="200px"/>
+  </div>
+</div>
+
+<div id="newsletter">
+
+</div>
+
+{% endblock %}
+

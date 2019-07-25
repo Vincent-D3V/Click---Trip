@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle étape{% endblock %}
+{% block stylesheet %}
+{% endblock %}
+
+{% block body %}
+    <h1 id="padding-for-navbar">Create new Stage</h1>
+
+    {{ include('stage/_form.html.twig') }}
+    {# {{ include('price/_prices.html.twig') }} #}
+    {# <ul class="prices" data-prototype="{{ form_widget(form.prices.vars.prototype)|e('html_attr') }}">
+        {{ form_row(form.prices) }}
+    </ul> #}
+
+    <a href="{{ path('stage_index') }}">back to list</a>
+{% endblock %}
+
+{% block javascript %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    // FOR PRICES
+    var $collectionHolder;
+
+    // setup an "add a price" link
+    var $addPriceButton = $('<button type="button" class="add_price_link">Ajouter un prix</button>');
+    var $newLinkLi = $('<li></li>').append($addPriceButton);
+
+    jQuery(document).ready(function() {
+        // Get the ul that holds the collection of prices
+        $collectionHolder = $('ul.prices');
+
+        // add the "add a price" anchor and li to the prices ul
+        $collectionHolder.append($newLinkLi);
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+        $addPriceButton.on('click', function(e) {
+            // add a new price form (see next code block)
+            addPriceForm($collectionHolder, $newLinkLi);
+        });
+    });
+
+    function addPriceForm($collectionHolder, $newLinkLi) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+
+        // get the new index
+        var index = $collectionHolder.data('index');
+
+        var newForm = prototype;
+        // You need this only if you didn't set 'label' => false in your prices field in TaskType
+        // Replace '__name__label__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        // newForm = newForm.replace(/__name__label__/g, index);
+
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        newForm = newForm.replace(/__name__/g, index);
+
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+
+        // Display the form in the page in an li, before the "Add a price" link li
+        var $newFormLi = $('<li></li>').append(newForm);
+        $newLinkLi.before($newFormLi);
+    }
+
+    /////////////////////////
+    // FOR DOCUMENTS
+    var $collectionHolderDoc;
+
+    // setup an "add a doc" link
+    var $addDocButton = $('<button type="button" class="add_document_link">Ajouter une image</button>');
+    var $newLinkLiDoc = $('<li></li>').append($addDocButton);
+
+    jQuery(document).ready(function() {
+        // Get the ul that holds the collection of documents
+        $collectionHolderDoc = $('ul.documents');
+
+        // add the "add a doc" anchor and li to the documents ul
+        $collectionHolderDoc.append($newLinkLiDoc);
+
+        $collectionHolderDoc.data('index', $collectionHolderDoc.find(':input').length);
+
+        $addDocButton.on('click', function(e) {
+            // add a new price form (see next code block)
+            addDocumentForm($collectionHolderDoc, $newLinkLiDoc);
+        });
+    });
+
+    function addDocumentForm($collectionHolderDoc, $newLinkLiDoc) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolderDoc.data('prototype');
+
+        // get the new index
+        var indexDoc = $collectionHolderDoc.data('index');
+
+        var newFormDoc = prototype;
+        // You need this only if you didn't set 'label' => false in your documents field in TaskType
+        // Replace '__name__label__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        // newFormDoc = newFormDoc.replace(/__name__label__/g, index);
+
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        newFormDoc = newFormDoc.replace(/__name__/g, indexDoc);
+
+        // increase the index with one for the next item
+        $collectionHolderDoc.data('index', indexDoc + 1);
+
+        // Display the form in the page in an li, before the "Add a price" link li
+        var $newFormDocLi = $('<li></li>').append(newFormDoc);
+        $newLinkLiDoc.before($newFormDocLi);
+    }
+
+</script>
+{% endblock %}

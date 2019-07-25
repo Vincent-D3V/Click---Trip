@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Stage{% endblock %}
+{% block stylesheet %}
+{{ encore_entry_link_tags('stageEdit') }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="formContainer">
+    <div class="formContent">
+    <h1 id="padding-for-navbar">Edition d'étape</h1>
+
+    {{ include('stage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('stage_index') }}" class="ui label teal backToList">Retourner à la liste</a>
+
+    {{ include('stage/_delete_form.html.twig') }}
+    {{ form(form) }}
+
+    </div>
+    </div>
+{% endblock %}

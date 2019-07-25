@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listing React Julien{% endblock %}
+
+    {% block stylesheet %}
+    {{ encore_entry_link_tags('planner') }}
+    {% endblock %}
+{% block body %}
+    <div id="padding-for-navbar"></div>
+    <div id="root"></div>
+{% endblock %}
+
+{% block javascript %}
+    {{ encore_entry_script_tags('planner') }}
+{% endblock %}

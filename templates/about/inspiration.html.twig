@@ -1,0 +1,276 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheet %}
+    {{ encore_entry_link_tags('inspiration') }}
+{% endblock %}
+
+{% block body  %}
+
+    <div class="container" id="padding-for-navbar">
+        <h1 class="ui block header inspirationTitle">Les étapes que nous vous conseillons pour chaque mois:</h1>
+        <h2 class="h3Title">Janvier</h2>
+        <div class="ui three column grid">
+            {% set iteration1 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 1 %}
+                        {% if iteration1 < 3 %}
+            <div class="column">
+                <div class="ui fluid card">
+                    <div class="image">
+                        <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                    </div>
+                    <div class="content">
+                        <a class="header nameStage">{{ stage.nameStage }}</a>
+                        <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+                {% set iteration1 = iteration1 + 1 %}
+                    {% endif %}
+                        {% endfor %}
+            </div>
+        <h2 class="h3Title">Février</h2>
+        <div class="ui three column grid">
+            {% set iteration2 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 2 %}
+                        {% if iteration2 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration2 = iteration2 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Mars</h2>
+        <div class="ui three column grid">
+            {% set iteration3 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 3 %}
+                        {% if iteration3 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration3 = iteration3 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Avril</h2>
+        <div class="ui three column grid">
+            {% set iteration4 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 4 %}
+                        {% if iteration4 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration4 = iteration4 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Mai</h2>
+        <div class="ui three column grid">
+            {% set iteration5 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 5 %}
+                        {% if iteration5 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration5 = iteration5 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Juin</h2>
+        <div class="ui three column grid">
+            {% set iteration6 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 6 %}
+                        {% if iteration6 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration6 = iteration6 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Juillet</h2>
+        <div class="ui three column grid">
+            {% set iteration7 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 7 %}
+                        {% if iteration7 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration7 = iteration7 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Août</h2>
+        <div class="ui three column grid">
+            {% set iteration8 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 8 %}
+                        {% if iteration8 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration8 = iteration8 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Septembre</h2>
+        <div class="ui three column grid">
+            {% set iteration9 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 9 %}
+                        {% if iteration9 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration9 = iteration9 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Octobre</h2>
+        <div class="ui three column grid">
+            {% set iteration10 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 10 %}
+                        {% if iteration10 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration10 = iteration10 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Novembre</h2>
+        <div class="ui three column grid">
+            {% set iteration11 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 11 %}
+                        {% if iteration11 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration11 = iteration11 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+        <h2 class="h3Title">Décembre</h2>
+        <div class="ui three column grid">
+            {% set iteration12 = 0 %}
+                {% for stage in stages %}
+                    {% if stage.bestMonth == 12 %}
+                        {% if iteration12 < 3 %}
+                    <div class="column">
+                        <div class="ui fluid card">
+                            <div class="image">
+                                <img src="{{ vich_uploader_asset(stage.documents|first, 'imageFile' ) }}" alt="">
+                            </div>
+                            <div class="content">
+                                <a class="header nameStage">{{ stage.nameStage }}</a>
+                                <a href="/etapes/{{ stage.destination}}/{{ stage.slug }}"><button class="ui button destinationButton">Plus d'info</button></a>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                        {% set iteration12 = iteration12 + 1 %}
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}
